@@ -23,32 +23,25 @@ export default class PCHeader extends Component {
                     <Col span={16}>
                         <Menu mode="horizontal" selectedKeys={[this.state.current]}>
                             <Menu.Item key="top">
-                                <Icon type="appstore"/>
-                                头条
+                                <Icon type="appstore"/>头条
                             </Menu.Item>
                             <Menu.Item key="society">
-                                <Icon type="appstore"/>
-                                社会
+                                <Icon type="appstore"/>社会
                             </Menu.Item>
                             <Menu.Item key="domestic">
-                                <Icon type="appstore"/>
-                                国内
+                                <Icon type="appstore"/>国内
                             </Menu.Item>
                             <Menu.Item key="intel">
-                                <Icon type="appstore"/>
-                                国际
+                                <Icon type="appstore"/>国际
                             </Menu.Item>
                             <Menu.Item key="enterainment">
-                                <Icon type="appstore"/>
-                                娱乐
+                                <Icon type="appstore"/>娱乐
                             </Menu.Item>
                             <Menu.Item key="sport">
-                                <Icon type="appstore"/>
-                                体育
+                                <Icon type="appstore"/>体育
                             </Menu.Item>
                             <Menu.Item key="sci">
-                                <Icon type="appstore"/>
-                                科技
+                                <Icon type="appstore"/>科技
                             </Menu.Item>
                             <Menu.Item key="fashion">
                                 <Icon type="appstore"/>时尚
