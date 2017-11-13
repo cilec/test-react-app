@@ -1,2 +1,0 @@
-# test-react-app
-study
