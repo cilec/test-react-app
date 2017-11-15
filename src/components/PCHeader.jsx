@@ -11,7 +11,8 @@ import {
     message,
     Button,
     Checkbox,
-    Form
+    Form,
+    Modal
 } from 'antd';
 const FormItem = Form.Item;
 const SubMenu = Menu.SubMenu;
@@ -27,6 +28,9 @@ class PCHeader extends Component {
             userNickName: '',
             userid: 0
         }
+    }
+    setModalVisible() {
+        this.setState({modalVisible: false})
     }
     render() {
         let {getFieldProps} = this.props.form;
@@ -83,6 +87,14 @@ class PCHeader extends Component {
                             </Menu.Item>
                             {userShow}
                         </Menu>
+
+                        <Modal
+                            title="用户中心"
+                            wrapClassName="vertical-center-modal"
+                            visible={this.state.modalVisible}
+                            onCancel={() => this.setModalVisible(false)}
+                            onOk={() => this.setModalVisible(false)}
+                            okText="关闭"></Modal>
                     </Col>
                     <Col span={2}></Col>
                 </Row>
