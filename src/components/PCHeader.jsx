@@ -17,6 +17,7 @@ import {
 const FormItem = Form.Item;
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
+const TabPane = Tabs.TabPane;
 class PCHeader extends Component {
     constructor() {
         super();
@@ -29,11 +30,21 @@ class PCHeader extends Component {
             userid: 0
         }
     }
-    setModalVisible() {
-        this.setState({modalVisible: false})
-    }
+    setModalVisible(value) {
+        this.setState({modalVisible: value})
+    };
+    handleClick(e) {
+        if (e.key == "register") {
+            this.setState({current: 'register'});
+            this.setModalVisible(true);
+        } else {
+            this.setState({current: e.key});
+        }
+    };
+    handleSubmit(e) {}
+
     render() {
-        let {getFieldProps} = this.props.form;
+        let {getFieldDecorator} = this.props.form;
         const userShow = this.state.hasLogined
             ? <Menu.Item key="logout" className="register">
                     <Button type="primary" htmlType="button">{this.state.userNickName}</Button>
@@ -60,7 +71,12 @@ class PCHeader extends Component {
                         </a>
                     </Col>
                     <Col span={16}>
-                        <Menu mode="horizontal" selectedKeys={[this.state.current]}>
+                        <Menu
+                            onClick={this
+                            .handleClick
+                            .bind(this)}
+                            mode="horizontal"
+                            selectedKeys={[this.state.current]}>
                             <Menu.Item key="top">
                                 <Icon type="appstore"/>头条
                             </Menu.Item>
@@ -94,7 +110,50 @@ class PCHeader extends Component {
                             visible={this.state.modalVisible}
                             onCancel={() => this.setModalVisible(false)}
                             onOk={() => this.setModalVisible(false)}
-                            okText="关闭"></Modal>
+                            okText="关闭">
+                            <Tabs type="card">
+                                <TabPane tab="注册" key="2">
+                                    <Form
+                                        layout="vertical"
+                                        onSubmit={this
+                                        .handleSubmit
+                                        .bind(this)}>
+                                        <FormItem label="账户">
+                                            {getFieldDecorator('r_userName', {
+                                                rules: [
+                                                    {
+                                                        required: true,
+                                                        message: '请输入您的账号'
+                                                    }
+                                                ]
+                                            })(<Input placeholder="请输入您的账号"/>)}
+                                            {/* <Input placeholder="请输入您的账号" {...getFieldProps('r_userName')}/> */}
+                                        </FormItem>
+                                        <FormItem label="密码">
+                                            {getFieldDecorator('r_password', {
+                                                rules: [
+                                                    {
+                                                        required: true,
+                                                        message: '请输入您的密码'
+                                                    }
+                                                ]
+                                            })(<Input type="password" placeholder="请输入您的密码"/>)}
+                                        </FormItem>
+                                        <FormItem label="确认密码">
+                                            {getFieldDecorator('r_confirmPassword', {
+                                                rules: [
+                                                    {
+                                                        required: true,
+                                                        message: '请再次输入您的密码'
+                                                    }
+                                                ]
+                                            })(<Input type="password" placeholder="请再次输入您的密码"/>)}
+                                        </FormItem>
+                                        <Button type="primary" htmlType="submit">注册</Button>
+                                    </Form>
+                                </TabPane>
+                            </Tabs>
+                        </Modal>
                     </Col>
                     <Col span={2}></Col>
                 </Row>
