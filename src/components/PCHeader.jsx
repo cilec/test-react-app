@@ -41,7 +41,19 @@ class PCHeader extends Component {
             this.setState({current: e.key});
         }
     };
-    handleSubmit(e) {}
+    handleSubmit(e) {
+        e.preventDefault();
+        let myFetchOptions = {
+            method: 'GET'
+        };
+        let formData = this
+            .props
+            .form
+            .getFieldsValue();
+        // console.log('formData')
+        console.log(formData);
+ 
+    }
 
     render() {
         let {getFieldDecorator} = this.props.form;
@@ -102,8 +114,59 @@ class PCHeader extends Component {
                                 <Icon type="appstore"/>时尚
                             </Menu.Item>
                             {userShow}
+                            <Modal
+                                title="用户中心"
+                                wrapClassName="vertical-center-modal"
+                                visible={this.state.modalVisible}
+                                onCancel={() => this.setModalVisible(false)}
+                                onOk={() => this.setModalVisible(false)}
+                                okText="关闭">
+                                <Tabs type="card">
+                                    <TabPane tab="注册" key="2">
+                                        <Form
+                                            layout="vertical"
+                                            onSubmit={this
+                                            .handleSubmit
+                                            .bind(this)}>
+                                            <FormItem label="账户">
+                                                {getFieldDecorator('r_userName', {
+                                                    rules: [
+                                                        {
+                                                            required: true,
+                                                            message: '请输入您的账号'
+                                                        }
+                                                    ]
+                                                })(<Input placeholder="请输入您的账号"/>)}
+                                                {/* <Input placeholder="请输入您的账号" {...getFieldProps('r_userName')}/> */}
+                                            </FormItem>
+                                            <FormItem label="密码">
+                                                {getFieldDecorator('r_password', {
+                                                    rules: [
+                                                        {
+                                                            required: true,
+                                                            message: '请输入您的密码'
+                                                        }
+                                                    ]
+                                                })(<Input type="password" placeholder="请输入您的密码"/>)}
+                                            </FormItem>
+                                            <FormItem label="确认密码">
+                                                {getFieldDecorator('r_confirmPassword', {
+                                                    rules: [
+                                                        {
+                                                            required: true,
+                                                            message: '请再次输入您的密码'
+                                                        }
+                                                    ]
+                                                })(<Input type="password" placeholder="请再次输入您的密码"/>)}
+                                            </FormItem>
+                                            <FormItem>
+                                                <Button type="primary" htmlType="submit">注册</Button>
+                                            </FormItem>
+                                        </Form>
+                                    </TabPane>
+                                </Tabs>
+                            </Modal>
                         </Menu>
-
                         <Modal
                             title="用户中心"
                             wrapClassName="vertical-center-modal"
@@ -149,11 +212,14 @@ class PCHeader extends Component {
                                                 ]
                                             })(<Input type="password" placeholder="请再次输入您的密码"/>)}
                                         </FormItem>
-                                        <Button type="primary" htmlType="submit">注册</Button>
+                                        <FormItem>
+                                            <Button type="primary" htmlType="submit">注册</Button>
+                                        </FormItem>
                                     </Form>
                                 </TabPane>
                             </Tabs>
                         </Modal>
+
                     </Col>
                     <Col span={2}></Col>
                 </Row>
