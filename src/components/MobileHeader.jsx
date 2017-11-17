@@ -45,10 +45,9 @@ class MobileHeader extends React.Component {
             .getFieldsValue();
         // console.log('formData')
         console.log(formData);
-
     }
-    login(){
-        
+    login() {
+        this.setModalVisible(true)
     }
     render() {
         const {getFieldDecorator} = this.props.form;
@@ -56,7 +55,11 @@ class MobileHeader extends React.Component {
             ? <Link>
                     <Icon type="inbox"/>
                 </Link>
-            : <Icon type="setting" onClick={this.login.bind(this)}/>
+            : <Icon
+                type="setting"
+                onClick={this
+                .login
+                .bind(this)}/>
         return (
 
             <div id="mobileheader">
