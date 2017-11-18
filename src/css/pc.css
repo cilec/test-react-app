@@ -18,3 +18,15 @@ html
 {
     text-align: center;
 }
+.container
+{
+    padding-top: 10px;
+}
+.leftContainer
+{
+    float: left;  width: 400px;
+}
+.carousel
+{
+    float: left;  width: 400px;
+}
