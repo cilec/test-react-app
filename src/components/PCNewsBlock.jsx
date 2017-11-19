@@ -10,30 +10,32 @@ export default class PCNewsBlock extends React.Component {
             news: ''
         }
     }
-    componentWillMount() {
+    componentDidMount() {
         let myFetchOptions = {
             method: 'GET',
-            mode:'cors'
         };
-        fetch(`http://v.juhe.cn/toutiao/index?type=${this.props.type}&key=340cbb3ef59e3625cd7c60d930b52104`, myFetchOptions).then(response => {
-            console.log(response)
-            console.log('test')
+        console.log('component will mount')
+        fetch(`http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${this.props.type}&count=${this.props.count}`).then(response => {
+            return response.text()
         }).then(result => {
-            console.log(result)
+            let json = JSON.parse(result);
+            this.setState({ news: json })
         })
     }
     render() {
         const { news } = this.state;
         const newsList = news.length
-            ? news.map((newsItem, index) => {
-                <li key={
-                    index
-                } > <Link to={`details/${newsItem.uniquekey}`} target="_blank">
-                        {newsItem.title}
-                    </Link> </li>
+            ?
+            news.map((newsItem, index, arr) => {
+                console.log(arr)
+                return <li key={index}>
+                    {newsItem.title}
+                </li>;
             })
             :
-            "没有加载到任何新闻"
+            "没有加载到任何新闻";
+        console.log(this.state.news)
+        console.log('newsList', newsList)
         return (
             <div className="topNewsList">
                 <Card>
