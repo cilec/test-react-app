@@ -13,19 +13,22 @@ export default class PCNewsContainer extends React.Component {
         }
         return (
             <div>
-                <Row>
+                <Row gutter={16}>
                     <Col span={2}></Col>
-                    <Col span={16} className="container">
-                        <div className="leftContainer">
-                            <div className="carousel">
-                                <Carousel {...settings}>
-                                    <div><img src={require('../img/carousel/1.jpeg')} /></div>
-                                    <div><img src={require('../img/carousel/2.jpeg')} /></div>
-                                    <div><img src={require('../img/carousel/3.jpeg')} /></div>
-                                    <div><img src={require('../img/carousel/4.jpeg')} /></div>
-                                </Carousel>
-                            </div>
-                        </div>
+                    {/* <Col span={16} className="container"> */}
+                    {/* <div className="leftContainer">
+                            <div className="carousel"> */}
+                    <Col span={6} className="carousel">
+                        <Carousel {...settings}>
+                            <div><img src={require('../img/carousel/1.jpeg')} /></div>
+                            <div><img src={require('../img/carousel/2.jpeg')} /></div>
+                            <div><img src={require('../img/carousel/3.jpeg')} /></div>
+                            <div><img src={require('../img/carousel/4.jpeg')} /></div>
+                        </Carousel>
+                    </Col>
+                    {/* </div>
+                        </div> */}
+                    <Col span={7}>
                         <Tabs className="tabs_news">
                             <TabPane tab="头条" key="1">
                                 <PCNewsBlock type="top" count="22" width="100%" bordered="false" />
@@ -35,7 +38,8 @@ export default class PCNewsContainer extends React.Component {
                             </TabPane>
                         </Tabs>
                     </Col>
-                    <Col span={2}></Col>
+                    {/* </Col> */}
+                    <Col span={9}></Col>
                 </Row>
             </div>
         )

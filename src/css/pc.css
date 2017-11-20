@@ -28,5 +28,9 @@ html
 }
 .carousel
 {
-    float: left;  width: 400px;
+    margin-top: 10px;
+}
+.topNewsList li
+{
+    font-size: .3rem;
 }
