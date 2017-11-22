@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Col, Tabs, Carousel } from 'antd';
+import { Row, Col, Tabs, Carousel, Card } from 'antd';
 import PCNewsBlock from './PCNewsBlock';
+import PCImgNewsBlock from './PCImgNewsBlock'
 const TabPane = Tabs.TabPane;
 export default class PCNewsContainer extends React.Component {
     render() {
@@ -25,11 +26,12 @@ export default class PCNewsContainer extends React.Component {
                             <div><img src={require('../img/carousel/3.jpeg')} /></div>
                             <div><img src={require('../img/carousel/4.jpeg')} /></div>
                         </Carousel>
+                        <PCImgNewsBlock count={6} type="guoji" width="400px" cartTitle="国际头条" imageWidth="100px" />
                     </Col>
                     {/* </div>
                         </div> */}
                     <Col span={7}>
-                        <Tabs className="tabs_news">
+                        <Tabs className="tabs_news" >
                             <TabPane tab="头条" key="1">
                                 <PCNewsBlock type="top" count="22" width="100%" bordered="false" />
                             </TabPane>
