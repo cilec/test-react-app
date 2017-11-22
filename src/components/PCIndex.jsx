@@ -3,7 +3,7 @@ import PCHeader from './PCHeader';
 import '../css/pc.css'
 import PCFooter from './PCFooter';
 import PCNewsContainer from './PCNewsContainer'
-import { Router } from 'react-router-dom';
+import { Router, BrowserRouter } from 'react-router-dom';
 export default class PCIndex extends React.Component {
     render() {
         return (

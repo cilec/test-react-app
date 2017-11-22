@@ -15,7 +15,7 @@ export default class PCNewsBlock extends React.Component {
             method: 'GET',
         };
         console.log('component will mount')
-        fetch(`http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${this.props.type}&count=${this.props.count}`).then(response => {
+        fetch(`http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${this.props.type}&count=${this.props.count}`,myFetchOptions).then(response => {
             return response.text()
         }).then(result => {
             let json = JSON.parse(result);
@@ -27,15 +27,15 @@ export default class PCNewsBlock extends React.Component {
         const newsList = news.length
             ?
             news.map((newsItem, index, arr) => {
-                console.log(arr)
+                // console.log(arr)
                 return <li key={index}>
-                    {newsItem.title}
+                    <Link to={`details/${newsItem.uniquekey}`}> {newsItem.title}</Link>
                 </li>;
             })
             :
             "没有加载到任何新闻";
-        console.log(this.state.news)
-        console.log('newsList', newsList)
+        // console.log(this.state.news)
+        // console.log('newsList', newsList)
         return (
             <div className="topNewsList">
                 <Card>
