@@ -3,7 +3,7 @@ import { Card } from 'antd';
 import { Route, Router } from 'react-router'
 import { Link, BrowserRouter } from 'react-router-dom';
 
-export default class PCNewsBlock extends React.Component {
+export default class PCImgNewsBlock extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -23,13 +23,32 @@ export default class PCNewsBlock extends React.Component {
         })
     }
     render() {
+        const styleImage = {
+            display: "block",
+            width: this.props.imageWidth,
+            height: '90px'
+        },
+            styleH3 = {
+                width: this.props.imageWidth,
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis'
+            };
         const { news } = this.state;
         const newsList = news.length
             ?
             news.map((newsItem, index, arr) => {
                 // console.log(arr)
                 return <li key={index}>
-                    <Link to={`details/${newsItem.uniquekey}`} target="_blank"> {newsItem.title}</Link>
+                    <Link to={`details/${newsItem.uniquekey}`} target="_blank">
+                        <div className="custom-image">
+                            <img alt="" style={styleImage} src={newsItem.thumbnail_pic_s} />
+                        </div>
+                        <div className="custom-title">
+                            <h3 style={styleH3}>{newsItem.title}</h3>
+                            <p>{newsItem.author_name}</p>
+                        </div>
+                    </Link>
                 </li>;
             })
             :
@@ -38,10 +57,8 @@ export default class PCNewsBlock extends React.Component {
         // console.log('newsList', newsList)
         return (
             <div className="topNewsList">
-                <Card >
-                    <ul>
-                        {newsList}
-                    </ul >
+                <Card title={this.props.cartTitle} bordered style={{ width: this.props.width }}>
+                    {newsList}
                 </Card>
             </div>
         )
