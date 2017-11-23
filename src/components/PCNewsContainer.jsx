@@ -26,7 +26,7 @@ export default class PCNewsContainer extends React.Component {
                             <div><img src={require('../img/carousel/3.jpeg')} /></div>
                             <div><img src={require('../img/carousel/4.jpeg')} /></div>
                         </Carousel>
-                        <PCImgNewsBlock count={6} type="guoji" width="100%"  cartTitle="国际头条" imageWidth="100%" />
+                        <PCImgNewsBlock count={6} type="guonei" width="100%"  cartTitle="国内头条" imageWidth="100%" />
                     </Col>
                     {/* </div>
                         </div> */}
