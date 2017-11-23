@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Tabs, Carousel, Card } from 'antd';
+import { Row, Col, Tabs, Carousel, Card, Layout } from 'antd';
 import PCNewsBlock from './PCNewsBlock';
 import PCImgNewsBlock from './PCImgNewsBlock'
 const TabPane = Tabs.TabPane;
@@ -14,6 +14,7 @@ export default class PCNewsContainer extends React.Component {
         }
         return (
             <div>
+
                 <Row gutter={16}>
                     <Col span={2}></Col>
                     {/* <Col span={16} className="container"> */}
@@ -43,6 +44,7 @@ export default class PCNewsContainer extends React.Component {
                     {/* </Col> */}
                     <Col span={9}></Col>
                 </Row>
+
             </div>
         )
     }
