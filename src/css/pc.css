@@ -34,3 +34,25 @@ html
 {
     font-size: .3rem;
 }
+.custom-image,
+.custom-title
+{
+    width: 100%;
+}
+.news-img-list
+{
+    display: flex;  align-content: space-around; flex-wrap: wrap;  justify-content: space-around;
+}
+.news-img-list li
+{
+    margin-bottom: 10px;  border: 1px solid #eee;
+}
+.news-img-list li:last-child,
+.news-img-list li:nth-last-child(2)
+{
+    margin-bottom: 0;
+}
+.custom-title p
+{
+    font-size: .2rem;
+}
