@@ -13,7 +13,7 @@ export default class PCNewsContainer extends React.Component {
             autoplay: true
         }
         return (
-            <div>
+            <div className="container">
 
                 <Row gutter={16}>
                     <Col span={2}></Col>
