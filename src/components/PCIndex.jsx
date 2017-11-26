@@ -11,7 +11,6 @@ export default class PCIndex extends React.Component {
             <div>
                 <PCHeader></PCHeader>
                 <PCNewsContainer />
-                <PCImgNewsBlock count={6} type="guonei" width="100%" cartTitle="国内头条" imageWidth="100%" />
                 <PCFooter></PCFooter>
             </div>
         )
