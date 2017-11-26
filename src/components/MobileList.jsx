@@ -38,7 +38,7 @@ export default class MobileList extends React.Component {
                             <div className="m_article_title">
                                 <span>{newsItem.title}</span>
                             </div>
-                            <div className="m_article_desc">
+                            <div className="m_article_desc clearfix">
                                 <div className="m_article_desc_l">
                                     <span className="m_article_channel">{newsItem.realtype}</span>
                                     <span className="m_article_time">{newsItem.date} </span>

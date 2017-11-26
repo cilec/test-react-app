@@ -24,7 +24,7 @@ html
 }
 .m_article
 {
-    font-size: .24rem;  margin: 0 .3rem; padding: .2rem 0;  border-bottom: 1px solid #e5e5e5;
+    font-size: .24rem;  display: block; margin: 0 .3rem; padding: .2rem 0;  border-bottom: 1px solid #e5e5e5;
 }
 .m_article_img
 {
@@ -45,4 +45,8 @@ html
 .m_article_info
 {
     overflow: hidden;
+}
+.m_article .m_article_desc .m_article_time
+{
+    font-size: .24rem;  display: inline-block;  color: #888;
 }
