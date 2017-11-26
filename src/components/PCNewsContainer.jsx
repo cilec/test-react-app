@@ -47,12 +47,12 @@ export default class PCNewsContainer extends React.Component {
                 </Row>
                 <Row style={{padding:"10px 0"}}>
                     <Col span={17} offset={2}>
-                        <PCImgNewsBlock count={7} type="yule" width="100%" cartTitle="娱乐头条" imageWidth="100%" />
+                        <PCImgNewsBlock count={8} type="yule" width="100%" cartTitle="娱乐头条" imageWidth="100%" />
                     </Col>
                 </Row>
                 <Row style={{padding:"10px 0"}}>
                     <Col span={17} offset={2}>
-                        <PCImgNewsBlock count={7} type="keji" width="100%" cartTitle="科技头条" imageWidth="100%" />
+                        <PCImgNewsBlock count={8} type="keji" width="100%" cartTitle="科技头条" imageWidth="100%" />
                     </Col>
                 </Row>
             </div>
