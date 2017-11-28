@@ -2,52 +2,63 @@ html
 {
     font-size: 50px;
 }
+
 #mobileheader
 {
     flex: 1;  background-color: #f6f6f6;
 }
+
 #mobileheader img
 {
-    height: 50px;vertical-align: top;
+    height: 50px;  vertical-align: top;
 }
+
 #mobileheader header
 {
     border-bottom: 1px solid #2db7f5;
 }
+
 #mobileheader header span
 {
-    font-size: 35px;  padding-left: 10px;   color: #2db7f5;
+    font-size: 35px;  padding-left: 10px;  color: #2db7f5;
 }
+
 #mobileheader i
 {
-    font-size: .5rem;  float: right;  margin-top: .3rem;  margin-right: .3rem; color: #2db7f5;
+    font-size: .5rem;  float: right;  margin-top: .3rem;  margin-right: .3rem;  color: #2db7f5;
 }
+
 .m_article
 {
-    font-size: .24rem;  display: block; margin: 0 .3rem; padding: .2rem 0;  border-bottom: 1px solid #e5e5e5;
+    font-size: .24rem;  display: block;  margin: 0 .3rem;  padding: .2rem 0;  border-bottom: 1px solid #e5e5e5;
 }
+
 .m_article .m_article_img
 {
     position: relative;  float: left;  overflow: hidden;  width: 27%;  height: 1.4rem;  margin-right: .2rem;
 }
+
 .m_article .m_article_img img
 {
     display: block;  width: 100%;  min-height: 1.4rem;
 }
+
 .m_article .m_article_info
 {
     overflow: hidden;
 }
+
 .m_article .m_article_info .m_article_title
 {
     font-size: .34rem;  line-height: .42rem;  display: -webkit-box;  overflow: hidden;  -webkit-box-orient: vertical;  width: 100%;  margin-bottom: .2rem;  color: #404040;  -webkit-line-clamp: 2;  -webkit-line-break: auto;
 }
+
 .m_article .m_article_desc .m_article_desc_l
 {
     float: left;
 }
+
 .m_article .m_article_desc .m_article_time
 {
-    font-size: .24rem;  display: inline-block;
- color: #888; 
+    font-size: .24rem;  display: inline-block;  color: #888;
 }
