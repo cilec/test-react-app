@@ -1,17 +1,30 @@
 import React from "react";
 import MobileHeader from "./MobileHeader";
 import MobileFooter from './MobileFooter';
-import { Tabs } from "antd"
+import { Tabs, Carousel } from "antd"
 import '../css/mobile.css';
 import MobileList from './MobileList'
 const TabPane = Tabs.TabPane;
 export default class MobileIndex extends React.Component {
     render() {
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            autoplay: true
+        }
         return (
-            <div>
+            < div >
                 <MobileHeader />
                 <Tabs>
                     <TabPane tab="头条" key="1">
+                        <Carousel {...settings}>
+                            <div><img src={require('../img/carousel/1.jpeg')} /></div>
+                            <div><img src={require('../img/carousel/2.jpeg')} /></div>
+                            <div><img src={require('../img/carousel/3.jpeg')} /></div>
+                            <div><img src={require('../img/carousel/4.jpeg')} /></div>
+                        </Carousel>
                         <MobileList count={6} type="top"></MobileList>
                     </TabPane>
                     <TabPane tab="社会" key="2">
@@ -28,7 +41,7 @@ export default class MobileIndex extends React.Component {
                     </TabPane>
                 </Tabs>
                 <MobileFooter />
-            </div>
+            </div >
         )
     }
 }
