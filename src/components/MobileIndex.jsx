@@ -1,7 +1,7 @@
 import React from "react";
 import MobileHeader from "./MobileHeader";
 import MobileFooter from './MobileFooter';
-import { Tabs, Carousel } from "antd"
+import {Tabs, Carousel} from "antd"
 import '../css/mobile.css';
 import MobileList from './MobileList'
 const TabPane = Tabs.TabPane;
@@ -15,15 +15,15 @@ export default class MobileIndex extends React.Component {
             autoplay: true
         }
         return (
-            < div >
-                <MobileHeader />
+            <div>
+                <MobileHeader/>
                 <Tabs>
                     <TabPane tab="头条" key="1">
                         <Carousel {...settings}>
-                            <div><img src={require('../img/carousel/1.jpeg')} /></div>
-                            <div><img src={require('../img/carousel/2.jpeg')} /></div>
-                            <div><img src={require('../img/carousel/3.jpeg')} /></div>
-                            <div><img src={require('../img/carousel/4.jpeg')} /></div>
+                            <div><img src={require('../img/carousel/1.jpeg')}/></div>
+                            <div><img src={require('../img/carousel/2.jpeg')}/></div>
+                            <div><img src={require('../img/carousel/3.jpeg')}/></div>
+                            <div><img src={require('../img/carousel/4.jpeg')}/></div>
                         </Carousel>
                         <MobileList count={6} type="top"></MobileList>
                     </TabPane>
@@ -40,7 +40,7 @@ export default class MobileIndex extends React.Component {
                         <MobileList count={6} type="yule"></MobileList>
                     </TabPane>
                 </Tabs>
-                <MobileFooter />
+                <MobileFooter/>
             </div >
         )
     }
