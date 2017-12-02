@@ -1,7 +1,9 @@
 import React from 'react';
 import {Row, Col} from 'antd/lib/grid';
+import {BackTop} from 'antd'
 import PCHeader from './PCHeader';
 import PCFooter from './PCFooter';
+import PCImgNewsBlock from './PCImgNewsBlock';
 export default class PCNewsDetails extends React.Component {
     constructor() {
         super();
@@ -38,10 +40,18 @@ export default class PCNewsDetails extends React.Component {
                     <Col span={14} className="pc_details_container">
                         <div className="articleContainer" dangerouslySetInnerHTML={this.createMarkup()}></div>
                     </Col>
-                    <Col span={6}></Col>
+                    <Col span={6}>
+                    <PCImgNewsBlock
+                            count={22}
+                            type="guonei"
+                            width="70%"
+                            cartTitle="国内头条"
+                            imageWidth="100%"/>
+                    </Col>
                     <Col span={2}></Col>
                 </Row>
                 <PCFooter></PCFooter>
+                <BackTop></BackTop>
             </div>
         )
 
