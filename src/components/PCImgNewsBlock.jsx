@@ -27,7 +27,7 @@ export default class PCImgNewsBlock extends React.Component {
                 display: "block",
                 width: this.props.imageWidth,
                 height: '90px',
-                maxWidth:'100%'
+                maxWidth: '100%'
             },
             styleH3 = {
                 width: this.props.imageWidth,
@@ -43,9 +43,10 @@ export default class PCImgNewsBlock extends React.Component {
                     key={index}
                     style={{
                     listStyleType: "none",
-                    width:"112px"
+                    width: "112px"
                 }}>
-                    <Link to={`details/${newsItem.uniquekey}`} target="_blank">
+                    {/* <Link to={`/details/${newsItem.uniquekey}`} target="_blank"> */}
+                    <Link to={`/details/${newsItem.uniquekey}`} >
                         <div className="custom-image">
                             <img alt="" style={styleImage} src={newsItem.thumbnail_pic_s}/>
                         </div>

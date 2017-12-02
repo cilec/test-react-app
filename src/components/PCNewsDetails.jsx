@@ -11,7 +11,26 @@ export default class PCNewsDetails extends React.Component {
             newsItem: ''
         }
     }
+    componentWillReceiveProps(nextProps) {
+        console.log('接受参数',nextProps)
+        //注意了，这里应该用nextProps而不是this.props
+        if (nextProps !== undefined) {
+            let myFetchOptions = {
+                method: 'GET'
+            }
+            fetch(`http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=${nextProps.match.params.uniquekey}`, myFetchOptions).then(response => {
+                return response.text()
+            }).then(res => {
+                // console.log(res)
+                this.setState({
+                    newsItem: JSON.parse(res)
+                });
+                document.title = this.state.newsItem.title + " - React News | React 新闻平台";
+            })
+        }
+    }
     componentDidMount() {
+        console.log('detail 改变')
         let myFetchOptions = {
             method: 'GET'
         }
@@ -41,7 +60,7 @@ export default class PCNewsDetails extends React.Component {
                         <div className="articleContainer" dangerouslySetInnerHTML={this.createMarkup()}></div>
                     </Col>
                     <Col span={6}>
-                    <PCImgNewsBlock
+                        <PCImgNewsBlock
                             count={22}
                             type="guonei"
                             width="70%"
