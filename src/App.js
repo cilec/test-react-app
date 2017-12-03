@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import {Button} from 'antd';
 import './App.css';
 import PCIndex from './components/PCIndex';
 import MobileIndex from './components/MobileIndex'
 import MediaQuery from 'react-responsive'
 import PCNewsDetails from './components/PCNewsDetails'
 import {Route} from 'react-router';
-import {BrowserRouter, Switch} from 'react-router-dom';
+import MobileNewsDetails from './components/MobileNewsDetails';
 class App extends Component {
   render() {
     return (
@@ -18,7 +17,10 @@ class App extends Component {
           </div>
         </MediaQuery>
         <MediaQuery query="(max-device-width:1224px)">
-          <MobileIndex/>
+          <div>
+            <Route path="/" exact={true} component={MobileIndex}></Route>
+            <Route path="/details/:uniquekey" component={MobileNewsDetails}></Route>
+          </div>
         </MediaQuery>
       </div>
     )
