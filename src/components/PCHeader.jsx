@@ -8,12 +8,9 @@ import {
     Col,
     Input,
     Tabs,
-    message,
     Button,
-    Checkbox,
     Form,
-    Modal,
-    Layout
+    Modal
 } from 'antd';
 const FormItem = Form.Item;
 const SubMenu = Menu.SubMenu;
@@ -53,7 +50,7 @@ class PCHeader extends Component {
             .getFieldsValue();
         // console.log('formData')
         console.log(formData);
- 
+
     }
 
     render() {
@@ -74,7 +71,7 @@ class PCHeader extends Component {
                 <Icon type="appstore"></Icon>注册/登录
             </Menu.Item>
         return (
-       
+
             <header>
                 <Row>
                     <Col span={2}></Col>
@@ -227,7 +224,7 @@ class PCHeader extends Component {
                 </Row>
 
             </header>
-      
+
         )
     }
 }
