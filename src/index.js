@@ -5,8 +5,9 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from 'react-router-dom';
 
-ReactDOM.render(
+const cc=ReactDOM.render(
     <BrowserRouter>
     <App/>
 </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();
+export default cc;
